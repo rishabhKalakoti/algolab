@@ -1,0 +1,5 @@
+#define MAX 1000
+void initArray(int* arr, int size, int limit);
+void printArray(int *p, int size);
+
+void bubble(int* p, int size);
