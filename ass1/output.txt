@@ -3,7 +3,10 @@ Flat profile:
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
  time   seconds   seconds    calls  Ts/call  Ts/call  name    
-100.80      0.32     0.32                             bubble
+ 66.63      3.16     3.16                             bubble
+ 21.36      4.17     1.01                             select
+ 12.06      4.74     0.57                             insert
+  0.21      4.75     0.01                             partition
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -17,13 +20,13 @@ seconds    function alone.  This is the major sort for this
 
 calls      the number of times this function was invoked, if
            this function is profiled, else blank.
- 
+
  self      the average number of milliseconds spent in this
 ms/call    function per call, if this function is profiled,
 	   else blank.
 
  total     the average number of milliseconds spent in this
-ms/call    function and its descendents per call, if this 
+ms/call    function and its descendents per call, if this
 	   function is profiled, else blank.
 
 name       the name of the function.  This is the minor sort
@@ -32,7 +35,7 @@ name       the name of the function.  This is the minor sort
 	   in parenthesis it shows where it would appear in
 	   the gprof listing if it were to be printed.
 
-Copyright (C) 2012 Free Software Foundation, Inc.
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
 
 Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
