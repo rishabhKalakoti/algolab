@@ -1,4 +1,4 @@
-void select(int *p, int size)
+void selectSort(int *p, int size)
 {
 	int i,j,minX,temp;
 	for (i=0; i<size-1; i++)
