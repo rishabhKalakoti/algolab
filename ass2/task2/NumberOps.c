@@ -1,11 +1,8 @@
+#include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-
-Number createNumber(char *number_format);
-static Number convert(Number n,int to_base);
-Number add(Number a, Number b);
-Number subtract(Number a, Number b);
-void printNumber(Number n);
+#include "Number.h"
+extern int maxD;
+extern char* Base;
 
 Number createNumber(char *number_format)
 {

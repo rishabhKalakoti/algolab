@@ -1,6 +1,4 @@
 #include<stdlib.h>
-int initializeBase(FILE *basefile);
-int lookup(char c);
 extern int maxD;
 extern char* Base;
 int initializeBase(FILE *basefile)

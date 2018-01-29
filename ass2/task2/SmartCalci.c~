@@ -8,8 +8,6 @@
 
 #define llu long long unsigned int
 #define ll long long int
-
-int maxD=0;
 int main(int argc, char** argv)
 {
 	if(argc!=3)

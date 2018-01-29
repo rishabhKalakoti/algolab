@@ -1,0 +1,2 @@
+int initializeBase(FILE *basefile);
+int lookup(char c);

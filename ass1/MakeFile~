@@ -1,0 +1,2 @@
+main: main.c printArray.o copy.o bubble.o quick.o merge.o insert.o select.o
+	gcc -o main main.c printArray.o copy.o bubble.o quick.o merge.o insert.o select.o

@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<string.h>
-
+int initializeBase(FILE *basefile);
+int lookup(char c);
 Number createNumber(char *number_format);
 static Number convert(Number n,int to_base);
 Number add(Number a, Number b);
