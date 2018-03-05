@@ -25,15 +25,25 @@ ll rt(ll k)
 {
 	ll i;
 	max=1;
-	min=mat[0][k];
 	for(i=0;i<N;i++)
 	{
 		if(mat[i][k]>max) max=mat[i][k];
-		if(mat[i][k]<min) min=mat[i][k];
 	}
 	if(max>1)
 		return 1;
 	return 0;
+}
+
+void printMatrix()
+{
+	int i,j;
+	for(i=0;i<N;i++)
+	{
+		for(j=0;j<N;j++)
+			printf("%lld ",mat[i][j]);
+		printf("\n");
+	}
+
 }
 
 int main()
@@ -43,34 +53,45 @@ int main()
 	for(i=0;i<N;i++)
 		for(j=0;j<N;j++)
 			scanf("%lld",&mat[i][j]);
-
+	int flag[N]={0};
 	// process
+	int f=0;
 	for(i=0;i<N;i++)
 	{
-		while(rt(i)==1)
+		f=0;
+		if(flag[i]==0 && rt(i)==0 )
 		{
+			op('s',i,1);
+			flag[i]=1;
+		}
+		if(flag[i]!=1)
+		{
+			rt(i);
+			min=max;
 			for(j=0; j<N;j++)
 			{
-				min=max;
 				while((mat[j][i]*2) <= max)
 				{
 					op('d',j,0);
 				}
-				if(mat[j][i]<min)
-					min=mat[j][i];
+				if(mat[j][i] < min)
+					min = mat[j][i];
 			}
 			op('s',i,min-1);
 		}
-		op('s',i,1);
-	}
-	/*
-	printf("\nFinal matrix:\n");
-	for(i=0;i<N;i++)
-	{
+		if(i==(N-1))
+			i=-1;
+		
 		for(j=0;j<N;j++)
-			printf("%lld ",mat[i][j]);
-		printf("\n");
+			if(flag[j]==0)
+				f=1;
+		if(f!=1)
+			break;
+		// printMatrix();
 	}
-	*/
+	
+	printf("\nFinal matrix:\n");
+	printMatrix();
+	
 	return 0;
 }
