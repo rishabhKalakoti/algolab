@@ -27,7 +27,7 @@ ll rt(ll k)
 	max=1;
 	for(i=0;i<N;i++)
 	{
-		if(mat[i][k] > max) max=mat[i][k];
+		if(mat[i][k]>max) max=mat[i][k];
 	}
 	if(max>1)
 		return 1;
@@ -43,36 +43,20 @@ void printMatrix()
 			printf("%lld ",mat[i][j]);
 		printf("\n");
 	}
+
 }
-int maxCol()
-{
-	int i,j;
-	ll maxNum=0;
-	int maxj=-1;
-	for(i=0;i<N;i++)
-	{
-		for(j=0;j<N;j++)
-		{
-			if(mat[i][j]>maxNum)
-			{
-				maxj=j;
-				maxNum=mat[i][j];
-			}
-		}
-	}
-	return maxj;
-}
+
 int main()
 {
 	ll i,j;
 	// input
 	for(i=0;i<N;i++)
 		for(j=0;j<N;j++)
-			scanf("%lld", &mat[i][j]);
+			scanf("%lld",&mat[i][j]);
 	int flag[N]={0};
 	// process
 	int f=0;
-	while((i=maxCol())!=-1)
+	for(i=0;i<N;i++)
 	{
 		f=0;
 		if(flag[i]==0 && rt(i)==0 )
@@ -94,11 +78,6 @@ int main()
 					min = mat[j][i];
 			}
 			op('s',i,min-1);
-		}
-		if(rt(i)==0 )
-		{
-			op('s',i,1);
-			flag[i]=1;
 		}
 		if(i==(N-1))
 			i=-1;
