@@ -1,0 +1,12 @@
+#include<stdio.h>
+#define MAX 100
+int main()
+{
+	int P[MAX];
+	int num;
+	int i=0;
+	while(scanf("%d",&num))
+		P[i++]=num;
+	int N=i;
+	return 0;
+}
