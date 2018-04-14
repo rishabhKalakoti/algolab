@@ -2,7 +2,8 @@
  
 void BFS(int);
 int G[1000][1000],visited[100],n;
- 
+int pre[1000];
+int c=1;
 void main()
 {
     int i,j;
@@ -18,10 +19,16 @@ void main()
  	{
  		if(!visited[i])
  		{
+ 			pre[i]=-1;
  			BFS(i);
  			printf("\n");
  		}
  	}
+ 	printf("Vertex:\tPre:\t\n");
+	for(i=0;i<n;i++)
+	{
+		printf("%5d\t%5d\n",i,pre[i]);
+	}
 }
  
 void BFS(int i)
@@ -42,6 +49,7 @@ void BFS(int i)
 		for(j=0;j<n;j++)
 	    	if(!visited[j] && G[v][j]==1)
 			{
+				pre[j]=v;
 				Q[++qPtr]=j;
 				// 1-grey
 				visited[j]=1;
