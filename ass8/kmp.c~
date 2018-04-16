@@ -72,7 +72,9 @@ int main()
 	
 	char txt[1000];
 	char pat[100];
+	printf("Enter Text:\n");
 	scanf("%s", txt);
+	printf("Enter Pattern:\n");
 	scanf("%s", pat);
 	KMPSearch(pat, txt);
 	printf("LPS: ");

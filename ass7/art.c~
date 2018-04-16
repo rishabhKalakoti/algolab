@@ -22,10 +22,7 @@ void main()
 	scanf("%d",&v);
 	int a,b;
 	while(scanf("%d %d",&a,&b)>0)
-	{
 		edge[a][b]=1;
-		edge[b][a]=1;
-	}
 	int i,k,j;
 	for(i=0; i<v;i++)
 	{

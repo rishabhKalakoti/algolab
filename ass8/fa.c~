@@ -44,7 +44,7 @@ void search(char *pat, char *txt)
     {
         state = TF[state][txt[i]];
         if (state == M)
-            printf ("\n Pattern occurs with shift %d",
+            printf ("\n Pattern found at index %d",
                                            i-M+1);
     }
 }

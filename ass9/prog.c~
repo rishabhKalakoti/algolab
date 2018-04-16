@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main()
+{
+	int V;
+	scanf("%d",&V);
+	int e;
+	scanf("%d",&e);
+	int edges[e][e];
+	int i,j;
+	
+	return 0;
+}
